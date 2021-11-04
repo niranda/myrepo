@@ -18,6 +18,7 @@ namespace ConsoleApp1
         {
             Random rnd = new Random();
             string[] alphabet = new string[] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+            Console.Write("Enter the length of the array: ");
             int n = int.Parse(Console.ReadLine());
             int evenCounter = 0, oddCounter = 0, evenIndex = 0, oddIndex = 0, evenUpperCounter = 0, oddUpperCounter = 0;
             int[] arr = new int[n];
@@ -83,11 +84,15 @@ namespace ConsoleApp1
 
             if (evenUpperCounter > oddUpperCounter)
             {
-                Console.WriteLine($"Even numbers array has the most capital letters: {evenUpperCounter}");
+                Console.WriteLine($"The first array has the most capital letters: {evenUpperCounter}");
+            }
+            else if (evenUpperCounter < oddUpperCounter)
+            {
+                Console.WriteLine($"The second array has the most capital letters: {oddUpperCounter}");
             }
             else
             {
-                Console.WriteLine($"Odd numbers array has the most capital letters: {oddUpperCounter}");
+                Console.WriteLine($"Both arrays has equal number of capital letters: {oddUpperCounter}");
             }
 
             Console.WriteLine();
@@ -95,6 +100,7 @@ namespace ConsoleApp1
             Console.WriteLine(string.Join(" ", evenLetterArr));
             Console.WriteLine("Second array:");
             Console.WriteLine(string.Join(" ", oddLetterArr));
+            Console.WriteLine();
         }
     }
 }
